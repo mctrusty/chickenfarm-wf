@@ -19,6 +19,12 @@ namespace ChickenFarmWF
             controller = new DisplayDataController(this);
         }
 
+        public IEnumerable<Farmer> farmersGrid_getData()
+        {
+            return controller.GetFarmers();
+        }
+
+        #region DataView members
         public event EventHandler DataRequested;
 
         public List<string> Data { get; set; }
@@ -27,10 +33,7 @@ namespace ChickenFarmWF
         {
             throw new NotImplementedException();
         }
+        #endregion
 
-        public IEnumerable<Farmer> farmersGrid_getData()
-        {
-            return controller.GetFarmers();
-        }
     }
 }
